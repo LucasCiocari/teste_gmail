@@ -77,11 +77,5 @@ public class GmailTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		wait.until(presenceOfElementLocated(By.cssSelector("[class='zA zE x7']")));
-		WebElement select_email = driver.findElement(By.cssSelector("[class='zA zE x7']"));
-		select_email.click();
-		select_email.sendKeys("\n");
 	}
 }
