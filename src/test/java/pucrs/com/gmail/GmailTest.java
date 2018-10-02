@@ -36,14 +36,9 @@ public class GmailTest {
 			driver.close();
 	}
 
-	// TODO: change name of method
-
-
 	@Test
-	public void ChangeName() {		
+	public void SendMailFunctionalTest() {		
 		WebDriverWait wait = new WebDriverWait(driver,10);
-		//By tgt_xpath = By.xpath(".//html/body/div[2]/div/main/div[2]/div[4]/div/input");
-		//By tgt_class = By.className("ms-Button-label");
 		By tgt_id = By.id("identifierId");
 		wait.until(presenceOfElementLocated(tgt_id));
 		WebElement button  = driver.findElement(tgt_id);
@@ -53,16 +48,11 @@ public class GmailTest {
 		WebElement passd_local  = driver.findElement(By.name("password"));
 		passd_local.sendKeys("s2b2018/2");
 
-		//wait.until(presenceOfElementLocated(By.id("passwordNext")));
 		WebElement next_btn  = driver.findElement(By.id("passwordNext"));
 		next_btn.sendKeys("\n");
 		
-		wait.until(presenceOfElementLocated(By.id(":52")));
-		WebElement compose_btn  = driver.findElement(By.id(":52"));
-
-		
-		//wait.until(presenceOfElementLocated(By.id(":gp")));
-		//WebElement compose_btn  = driver.findElement(By.id(":gp"));
+		wait.until(presenceOfElementLocated(By.className("z0")));
+		WebElement compose_btn  = driver.findElement(By.className("z0"));
 		compose_btn.click();
 		
 		wait.until(presenceOfElementLocated(By.name("to")));
@@ -73,21 +63,25 @@ public class GmailTest {
 		WebElement subject_field  = driver.findElement(By.name("subjectbox"));
 		subject_field.sendKeys("MeuPrimeiroEmail");
 		
-		wait.until(presenceOfElementLocated(By.id(":b2")));
-		WebElement text_field  = driver.findElement(By.id(":b2"));
+		wait.until(presenceOfElementLocated(By.cssSelector("[class='Am Al editable LW-avf']")));
+		WebElement text_field = driver.findElement(By.cssSelector("[class='Am Al editable LW-avf']"));
 		text_field.sendKeys("Exemplo de mensagem");
 		
-		wait.until(presenceOfElementLocated(By.id(":9n")));
-		WebElement snd_btn  = driver.findElement(By.id(":9n"));
+		wait.until(presenceOfElementLocated(By.cssSelector("[class='T-I J-J5-Ji aoO T-I-atl L3']")));
+		WebElement snd_btn = driver.findElement(By.cssSelector("[class='T-I J-J5-Ji aoO T-I-atl L3']"));
 		snd_btn.click();
 		
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		wait.until(presenceOfElementLocated(By.cssSelector("[class='zA zE x7']")));
+		WebElement select_email = driver.findElement(By.cssSelector("[class='zA zE x7']"));
+		select_email.click();
+		select_email.sendKeys("\n");
 	}
-	
-	
 }
