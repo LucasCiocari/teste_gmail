@@ -122,8 +122,8 @@ public class GmailTest {
 		WebElement next_btn = driver.findElement(By.id("passwordNext"));
 		next_btn.sendKeys("\n");
 
-		wait.until(presenceOfElementLocated(By.id(":3a")));
-		WebElement select_mail = driver.findElement(By.id(":3a"));
+		wait.until(presenceOfElementLocated(By.id(":37")));
+		WebElement select_mail = driver.findElement(By.id(":37"));
 		select_mail.click();
 
 		wait.until(presenceOfElementLocated(By.id(":5y")));
