@@ -39,7 +39,7 @@ public class GmailTest {
 	@Before
 	public void setupTest() {
 		driver = new ChromeDriver();
-
+		this.driver.manage().window().maximize();
 		String initialPage = "https://accounts.google.com/AccountChooser/identifier?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AddSession";
 		driver.get(initialPage);
 		report = new ExtentReports("ExtentReportResults.html");
