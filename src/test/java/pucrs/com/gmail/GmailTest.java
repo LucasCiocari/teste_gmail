@@ -117,13 +117,13 @@ public class GmailTest {
 		wait.until(presenceOfElementLocated(By.name("password")));
 		wait.until(visibilityOfElementLocated(By.name("password")));
 		WebElement passd_local = driver.findElement(By.name("password"));
-		passd_local.sendKeys("s2b2018/2");
+		passd_local.sendKeys("s2b20182");
 
 		WebElement next_btn = driver.findElement(By.id("passwordNext"));
 		next_btn.sendKeys("\n");
 
-		wait.until(presenceOfElementLocated(By.id(":37")));
-		WebElement select_mail = driver.findElement(By.id(":37"));
+		wait.until(presenceOfElementLocated(By.id(":39")));
+		WebElement select_mail = driver.findElement(By.id(":39"));
 		select_mail.click();
 
 		wait.until(presenceOfElementLocated(By.id(":5y")));
